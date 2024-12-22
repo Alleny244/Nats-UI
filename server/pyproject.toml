@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "nats-ui"
+version = "0.1.0"
+description = "A simple GUI platform for viewing data in nats server connections"
+authors = ["Alleny244 <alleny244@gmail.com>"]
+packages = [{ include = "app" }]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+nats-py = "^2.9.0"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.8.4"
+
+
+[tool.poetry.group.test.dependencies]
+pytest = "^8.3.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
