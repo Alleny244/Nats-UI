@@ -3,7 +3,7 @@ import {useNavigate} from 'react-router-dom';
 import "../css/createStreamPage.css";
 
 const CreateStreamPage = () => {
-    const [streamName, setStreamName] = useState("");
+    const [name, setName] = useState("");
     const [subjects, setSubjects] = useState("");
     const [streamProperties, setStreamProperties] = useState({
         retention: null, storage: null, discard: null,
@@ -18,7 +18,7 @@ const CreateStreamPage = () => {
         e.preventDefault();
 
         // Validate required fields
-        if (!streamName.trim()) {
+        if (!name.trim()) {
             alert("Stream name is required!");
             return;
         }
@@ -29,30 +29,37 @@ const CreateStreamPage = () => {
         }
 
         const requestData = {
-            streamName, subjects: subjects.split(",").map((subject) => subject.trim()), ...streamProperties,
+            name, subjects: subjects.split(",").map((subject) => subject.trim()), ...streamProperties,
         };
 
         try {
             const response = await fetch("http://localhost:8078/create/stream", {
-                method: "POST", headers: {
+                method: "POST",
+                headers: {
                     "Content-Type": "application/json",
-                }, body: JSON.stringify(requestData),
+                },
+                body: JSON.stringify(requestData),
             });
 
             if (response.status === 500) {
                 const errorData = await response.json();
                 const errorMessage = errorData.detail || "An error occurred";
-                navigate("/error", {state: {errorMessage, streamName, subjects, streamProperties}}); // Use navigate instead of history.push
+                navigate("/error", {state: {errorMessage, name, subjects, streamProperties}});
                 return;
             }
+            const data = await response.json()
+            navigate("/modify", {
+                state: {
+                    data
+                }
+            });
         } catch (error) {
             console.error("Error:", error);
-            alert("Error creating stream. Try again.");
         }
     };
 
-
-    return (<form className="create-stream-form" onSubmit={handleSubmit}>
+    return (
+        <form className="create-stream-form" onSubmit={handleSubmit}>
             <h2 className="create-stream-title">Create Stream</h2>
 
             <div className="create-stream-field">
@@ -61,8 +68,8 @@ const CreateStreamPage = () => {
                     type="text"
                     id="streamName"
                     placeholder="Enter stream name"
-                    value={streamName}
-                    onChange={(e) => setStreamName(e.target.value)}
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
                 />
             </div>
 
@@ -130,7 +137,7 @@ const CreateStreamPage = () => {
                 <button
                     type="button"
                     className="create-stream-cancel"
-                    onClick={() => alert("Canceled!")}
+                    onClick={() => navigate("/")}
                 >
                     Cancel
                 </button>
@@ -138,7 +145,8 @@ const CreateStreamPage = () => {
                     Create Stream
                 </button>
             </div>
-        </form>);
+        </form>
+    );
 };
 
 export default CreateStreamPage;
