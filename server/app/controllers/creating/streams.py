@@ -8,7 +8,7 @@ from utils import NatsClient
 
 class StreamsController:
     @beartype
-    async def create_streams(self, properties: JetStreamParams) -> dict | HTTPException:
+    async def create_streams(self, properties: JetStreamParams) -> dict:
         try:
             nats_client = NatsClient().return_nats_client()
             result = nats_client._server_info

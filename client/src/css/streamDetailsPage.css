@@ -1,8 +1,8 @@
 /* Main container */
 .stream-details-container {
   max-width: 1100px;
-  margin: 30px auto;
-  padding: 20px;
+  margin: 40px auto;
+  padding: 60px;
   background-color: #f1f5f9;
   border-radius: 12px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
@@ -141,4 +141,26 @@ h3 {
 
 .message-item:hover {
   background-color: #d1d5db;
+}
+
+
+.monitor-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 40px;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 200px;
+}
+
+
+.monitor-btn:hover {
+    background-color: #45a049;
 }
