@@ -1,0 +1,144 @@
+/* Main container */
+.stream-details-container {
+  max-width: 1100px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #f1f5f9;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Arial', sans-serif;
+}
+
+/* Header Section */
+.stream-header {
+  text-align: left;
+  margin-bottom: 40px;
+}
+
+.stream-header h1 {
+  font-size: 2.5rem;
+  color: #1f2937;
+}
+
+.stream-info {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #4b5563;
+}
+
+.stream-info p {
+  margin: 8px 0;
+}
+
+.stream-info strong {
+  color: #1d4ed8;
+}
+
+/* Main action container */
+.action-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* Panel styling */
+.action-panel {
+  width: 48%;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+h3 {
+  font-size: 1.8rem;
+  color: #374151;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-size: 1rem;
+  color: #6b7280;
+  margin-bottom: 8px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border: 2px solid #d1d5db;
+  border-radius: 8px;
+  box-sizing: border-box;
+  background-color: #f9fafb;
+}
+
+.input-btn-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.action-btn {
+  width: 100%;
+  padding: 12px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.publish-btn {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.publish-btn:hover {
+  background-color: #388E3C;
+}
+
+.consume-btn {
+  background-color: #1E40AF;
+  color: white;
+}
+
+.consume-btn:hover {
+  background-color: #1D4ED8;
+}
+
+/* Consumed Messages */
+.consumed-messages {
+  margin-top: 25px;
+  padding: 10px;
+  background-color: #f9fafb;
+  border-radius: 8px;
+}
+
+.consumed-messages h4 {
+  font-size: 1.3rem;
+  color: #1f2937;
+  margin-bottom: 15px;
+}
+
+.message-list {
+  list-style: none;
+  padding: 0;
+}
+
+.message-item {
+  background-color: #e2e8f0;
+  padding: 12px;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: #374151;
+  transition: background-color 0.3s ease;
+}
+
+.message-item:hover {
+  background-color: #d1d5db;
+}
