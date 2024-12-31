@@ -7,14 +7,14 @@ import StreamDetailsPage from "./components/streamDetailsPage";
 
 const App = () => {
     return (<Router>
-            <Routes>
-                <Route path="/" element={<LandingPage/>}/>
-                <Route path="/create" element={<CreateStreamPage/>}/>
-                <Route path="/error" element={<ErrorPage/>}/>
-                 <Route path="/modify" element={<StreamDetailsPage/>}/>
+        <Routes>
+            <Route path="/" element={<LandingPage/>}/>
+            <Route path="/create" element={<CreateStreamPage/>}/>
+            <Route path="/error" element={<ErrorPage/>}/>
+            <Route path="/modify" element={<StreamDetailsPage/>}/>
 
-            </Routes>
-        </Router>);
+        </Routes>
+    </Router>);
 };
 
 

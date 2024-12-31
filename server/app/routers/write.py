@@ -2,7 +2,7 @@ from fastapi import APIRouter
 
 from controllers.creating.message import MessageController
 from controllers.creating.streams import StreamsController
-from models import JetStreamParams, PublishParams
+from models import JetStreamParams, PublishParams, SubscribeParams
 
 router = APIRouter(tags=["Endpoint used to create a new nats connection"])
 
@@ -15,3 +15,8 @@ async def create_stream(params: JetStreamParams):
 @router.post("/publish")
 async def publish_message(params: PublishParams):
     return await MessageController().publish(params=params)
+
+
+@router.post("/subscribe")
+async def subscribe_message(params: SubscribeParams):
+    return await MessageController().subscribe(params=params)

@@ -1,4 +1,4 @@
 from .jetstream import JetStreamParams
-from .publish import PublishParams
+from .message import PublishParams, SubscribeParams
 
-__all__ = [JetStreamParams, PublishParams]
+__all__ = [JetStreamParams, PublishParams, SubscribeParams]
