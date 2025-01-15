@@ -17,7 +17,6 @@ const CreateStreamPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validate required fields
         if (!name.trim()) {
             alert("Stream name is required!");
             return;

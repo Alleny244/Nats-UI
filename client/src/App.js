@@ -4,6 +4,7 @@ import LandingPage from './components/landingPage';
 import CreateStreamPage from './components/createStreamPage'
 import ErrorPage from "./components/errorPage";
 import StreamDetailsPage from "./components/streamDetailsPage";
+import Dashboard from "./components/dashboard";
 
 const App = () => {
     return (<Router>
@@ -12,6 +13,7 @@ const App = () => {
             <Route path="/create" element={<CreateStreamPage/>}/>
             <Route path="/error" element={<ErrorPage/>}/>
             <Route path="/modify" element={<StreamDetailsPage/>}/>
+            <Route path="/dashboard" element={<Dashboard/>}/>
 
         </Routes>
     </Router>);

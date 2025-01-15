@@ -15,7 +15,10 @@ class ConsumerTypeEnum(str, Enum):
 
 
 class SubscribeParams(BaseModel):
-    consumer_name: str
     stream_name: str
     type: ConsumerTypeEnum
     subjects: list[str]
+
+
+class MonitorParams(BaseModel):
+    stream_name: str

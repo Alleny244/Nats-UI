@@ -2,6 +2,7 @@ from fastapi import APIRouter
 
 from controllers.creating.message import MessageController
 from controllers.creating.streams import StreamsController
+from controllers.monitoring import NatsDashboardController
 from models import JetStreamParams, PublishParams, SubscribeParams
 
 router = APIRouter(tags=["Endpoint used to create a new nats connection"])
@@ -20,3 +21,8 @@ async def publish_message(params: PublishParams):
 @router.post("/subscribe")
 async def subscribe_message(params: SubscribeParams):
     return await MessageController().subscribe(params=params)
+
+
+@router.post("/monitor")
+async def dashboard():
+    return await NatsDashboardController().dashboard()

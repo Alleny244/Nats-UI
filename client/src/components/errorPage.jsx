@@ -12,8 +12,7 @@ const ErrorPage = () => {
 
     const messageToDisplay = errorMessage?.detail || errorMessage || "An unknown error occurred.";
 
-    return (
-        <div className="error-page">
+    return (<div className="error-page">
             <div className="error-page-container">
                 <img
                     src={require("../assets/nats-logo.png")}
@@ -31,8 +30,7 @@ const ErrorPage = () => {
                     </button>
                 </div>
             </div>
-        </div>
-    );
+        </div>);
 };
 
 export default ErrorPage;
