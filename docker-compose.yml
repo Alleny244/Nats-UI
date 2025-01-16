@@ -1,0 +1,25 @@
+services:
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend/.
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    env_file:
+      - .env.frontend
+    networks:
+      nats-network:
+  backend:
+    container_name: backend
+    build:
+      context: server/
+      dockerfile: Dockerfile
+    ports:
+      - 8010:8080
+    networks:
+      nats-network:
+
+networks:
+  nats-network:
+    driver: bridge
