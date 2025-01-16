@@ -1,12 +1,13 @@
-import React from 'react';
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import LandingPage from './components/landingPage';
-import CreateStreamPage from './components/createStreamPage'
 import ErrorPage from "./components/errorPage";
-import StreamDetailsPage from "./components/streamDetailsPage";
 import Dashboard from "./components/dashboard";
 
-const App = () => {
+
+
+function App() {
+
+
     return (<Router>
         <Routes>
             <Route path="/" element={<LandingPage/>}/>
@@ -15,7 +16,6 @@ const App = () => {
 
         </Routes>
     </Router>);
-};
+}
 
-
-export default App;
+export default App

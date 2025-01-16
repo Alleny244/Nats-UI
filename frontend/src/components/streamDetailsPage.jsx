@@ -1,10 +1,11 @@
-import React, {useState, useEffect} from "react";
+import  {useState, useEffect} from "react";
 import {useLocation, useNavigate} from "react-router-dom";
 import "../css/streamDetailsPage.css";
 
 const StreamDetails = () => {
     const location = useLocation();
     const navigate = useNavigate();
+
 
     const [streamName, setStreamName] = useState("");
     const [subjects, setSubjects] = useState([]);
@@ -38,7 +39,7 @@ const StreamDetails = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8078/create/publish", {
+            const response = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/create/publish`, {
                 method: "POST", headers: {
                     "Content-Type": "application/json",
                 }, body: JSON.stringify(payload),

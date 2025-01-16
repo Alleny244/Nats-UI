@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import  {useState} from "react";
 import {useNavigate} from 'react-router-dom';
 import "../css/createStreamPage.css";
 
@@ -32,7 +32,7 @@ const CreateStreamPage = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8078/create/stream", {
+            const response = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/create/stream`, {
                 method: "POST", headers: {
                     "Content-Type": "application/json",
                 }, body: JSON.stringify(requestData),
