@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import  {useState} from "react";
 import {useNavigate} from 'react-router-dom';
 import "../css/createStreamPage.css";
 
@@ -17,7 +17,6 @@ const CreateStreamPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        // Validate required fields
         if (!name.trim()) {
             alert("Stream name is required!");
             return;
@@ -33,12 +32,10 @@ const CreateStreamPage = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8078/create/stream", {
-                method: "POST",
-                headers: {
+            const response = await fetch(`${import.meta.env.VITE_APP_SERVER_URL}/create/stream`, {
+                method: "POST", headers: {
                     "Content-Type": "application/json",
-                },
-                body: JSON.stringify(requestData),
+                }, body: JSON.stringify(requestData),
             });
 
             if (response.status === 500) {
@@ -58,8 +55,7 @@ const CreateStreamPage = () => {
         }
     };
 
-    return (
-        <form className="create-stream-form" onSubmit={handleSubmit}>
+    return (<form className="create-stream-form" onSubmit={handleSubmit}>
             <h2 className="create-stream-title">Create Stream</h2>
 
             <div className="create-stream-field">
@@ -145,8 +141,7 @@ const CreateStreamPage = () => {
                     Create Stream
                 </button>
             </div>
-        </form>
-    );
+        </form>);
 };
 
 export default CreateStreamPage;

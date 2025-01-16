@@ -1,0 +1,60 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to bottom, #1e1e2f, #2c3e50);
+    color: white;
+}
+
+.landing-page {
+    text-align: center;
+    padding: 20px;
+}
+
+.header {
+    margin-bottom: 50px;
+}
+
+.nats-logo {
+    width: 150px;
+    height: auto;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-top: 20px;
+}
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.option-button {
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option-button.monitor {
+    background-color: #3498db;
+    color: white;
+}
+
+.option-button.create {
+    background-color: #e74c3c;
+    color: white;
+}
+
+.option-button:hover {
+    opacity: 0.8;
+}
+
+.footer {
+    margin-top: 50px;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
