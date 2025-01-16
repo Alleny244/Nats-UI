@@ -10,9 +10,7 @@ const App = () => {
     return (<Router>
         <Routes>
             <Route path="/" element={<LandingPage/>}/>
-            <Route path="/create" element={<CreateStreamPage/>}/>
             <Route path="/error" element={<ErrorPage/>}/>
-            <Route path="/modify" element={<StreamDetailsPage/>}/>
             <Route path="/dashboard" element={<Dashboard/>}/>
 
         </Routes>

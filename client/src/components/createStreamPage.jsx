@@ -33,11 +33,9 @@ const CreateStreamPage = () => {
 
         try {
             const response = await fetch("http://localhost:8078/create/stream", {
-                method: "POST",
-                headers: {
+                method: "POST", headers: {
                     "Content-Type": "application/json",
-                },
-                body: JSON.stringify(requestData),
+                }, body: JSON.stringify(requestData),
             });
 
             if (response.status === 500) {
@@ -57,8 +55,7 @@ const CreateStreamPage = () => {
         }
     };
 
-    return (
-        <form className="create-stream-form" onSubmit={handleSubmit}>
+    return (<form className="create-stream-form" onSubmit={handleSubmit}>
             <h2 className="create-stream-title">Create Stream</h2>
 
             <div className="create-stream-field">
@@ -144,8 +141,7 @@ const CreateStreamPage = () => {
                     Create Stream
                 </button>
             </div>
-        </form>
-    );
+        </form>);
 };
 
 export default CreateStreamPage;

@@ -379,3 +379,8 @@ body {
     transform: scale(1.03);
     background: #EAF3FF !important;
 }
+
+.server-info:hover {
+    transform: scale(1.03);
+
+}
