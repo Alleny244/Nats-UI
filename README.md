@@ -18,7 +18,13 @@ NATS UI for JetStream is a real-time web dashboard built using React for monitor
 - **Docker Compose**: For managing the multi-container setup of the frontend and backend services.
 
 ---
+## Screenshot
 
+Below is a screenshot of the **NATS UI for JetStream** web app:
+
+![Screenshot](nats-ui.png) 
+
+---
 ## How to Run Locally
 
 To run this project locally, follow the steps below:
@@ -45,9 +51,30 @@ docker-compose up --build
 - **Frontend**: [http://localhost:3000](http://localhost:3000)
 - **Backend**: [http://localhost:8010](http://localhost:8010)
 
+## Environmental Variables:
 
-## Screenshot
+Make sure to create an `.env.frontend` file in the project root and include the following environment variable for your frontend setup:
+```
+VITE_APP_SERVER_URL=http://localhost:8010
+This URL points to the backend service running locally at port `8010`.
+```
 
-Below is a screenshot of the **NATS UI for JetStream** web app:
+### TODO
 
-![Screenshot](path_to_your_screenshot.png) 
+- Implement automatic reloading of FastAPI to detect when NATS connects, disconnects, and reconnects.
+  
+
+## Contributing
+
+Feel free to contribute to this project! Whether it's reporting bugs, submitting issues, or creating pull requests, contributions are always welcome. Here's how you can contribute:
+
+1. Fork the repository.
+2. Create a new branch for your feature or bug fix.
+3. Make your changes and test them.
+4. Submit a pull request.
+
+We appreciate your contributions!
+
+
+
+
