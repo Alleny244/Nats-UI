@@ -37,13 +37,13 @@ To run this project locally, follow the steps below:
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/yourusername/nats-ui.git
+   git clone https://github.com/Alleny244/nats-ui.git
    cd nats-ui
 
 2. Build and start the services using Docker Compose:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 3. Once the containers are up and running, you can access the app in your browser:
